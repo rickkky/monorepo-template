@@ -1,0 +1,21 @@
+/** @type {import('prettier').Options} */
+export default {
+  editorconfig: true,
+  printWidth: 80,
+  tabWidth: 2,
+  useTabs: false,
+  semi: true,
+  singleQuote: true,
+  quoteProps: 'as-needed',
+  jsxSingleQuote: true,
+  trailingComma: 'all',
+  bracketSpacing: true,
+  bracketSameLine: false,
+  arrowParens: 'always',
+  htmlWhitespaceSensitivity: 'ignore',
+  vueIndentScriptAndStyle: false,
+  endOfLine: 'lf',
+  proseWrap: 'preserve',
+  embeddedLanguageFormatting: 'auto',
+  singleAttributePerLine: true,
+};

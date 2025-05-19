@@ -1,0 +1,31 @@
+{
+  "name": "monorepo-template",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "rickkky <rickkky@foxmail.com>",
+  "type": "module",
+  "packageManager": "pnpm@9.15.1",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "3.4.2",
+    "turbo": "^2.4.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.23.0"
+  }
+}

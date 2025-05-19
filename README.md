@@ -1,2 +1,1 @@
-# monorepo-template
-Monorepo template.
+# Monorepo Template
