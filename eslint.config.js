@@ -1,17 +1,31 @@
+import { defineConfig } from 'eslint/config';
+import { includeIgnoreFile } from '@eslint/compat';
+import { fileURLToPath } from 'node:url';
+import jslint from '@eslint/js';
 import globals from 'globals';
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import pluginVue from 'eslint-plugin-vue';
+import tslint from 'typescript-eslint';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import vuePlugin from 'eslint-plugin-vue';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
-  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...pluginVue.configs['flat/essential'],
+export default defineConfig([
+  includeIgnoreFile(fileURLToPath(new URL('.gitignore', import.meta.url))),
+  {
+    files: ['**/*.{js,jsx,ts,tsx,vue}'],
+    languageOptions: { globals: globals.browser },
+  },
+  jslint.configs.recommended,
+  tslint.configs.recommended,
+  prettierRecommended,
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
+  reactHooks.configs['recommended-latest'],
+  reactRefresh.configs.vite,
+  vuePlugin.configs['flat/recommended'],
   {
     files: ['**/*.vue'],
-    languageOptions: { parserOptions: { parser: tseslint.parser } },
+    languageOptions: { parserOptions: { parser: tslint.parser } },
   },
-];
+]);

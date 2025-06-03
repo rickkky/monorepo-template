@@ -1,4 +1,3 @@
-/** @type {import('prettier').Options} */
 export default {
   editorconfig: true,
   printWidth: 80,
