@@ -1,5 +1,6 @@
+import { fileURLToPath } from 'node:url';
+
 import { defineConfig } from 'vite';
-import { fileURLToPath } from 'url';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig(() => {

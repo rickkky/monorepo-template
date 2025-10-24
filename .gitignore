@@ -3,12 +3,19 @@
 # dependencies
 node_modules
 .pnp*
+.yarn
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # logs
 logs
 *.log
 npm-debug.log*
 pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # editor directories and files
 .vscode/*
@@ -21,6 +28,9 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+# env files (can opt-in for committing if needed)
+.env*
+
 # testing
 coverage
 
@@ -32,3 +42,11 @@ build
 # other
 *.local
 .turbo
+
+# next.js
+.vercel
+.next
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
