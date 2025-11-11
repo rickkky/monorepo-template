@@ -12,7 +12,8 @@
   "scripts": {
     "prepare": "husky",
     "build": "turbo run build",
-    "lint": "turbo run lint"
+    "lint": "eslint --flag v10_config_lookup_from_file .",
+    "format": "prettier --ignore-unknown --write ."
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.12",
@@ -21,6 +22,7 @@
     "@eslint/compat": "^1.2.9",
     "@eslint/js": "^9.27.0",
     "eslint": "^9.27.0",
+    "eslint-config": "file:./.eslint",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-react": "^7.37.5",
